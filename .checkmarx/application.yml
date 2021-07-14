@@ -1,7 +1,13 @@
 cxflow:
   bug-tracker: NONE
   bug-tracker-impl:
-#    - Json
+     - Azure
+     - Csv
+     - CxXml
+     - GitHub
+     - GitLab
+    # - Rally
+     - Json
   filter-severity:
   filter-category:
     - SQL_Injection
