@@ -1,0 +1,34 @@
+version: 2.1
+
+workflows:
+  test-env-vars:
+    jobs:
+      - build:
+          context: Cx
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8u222-stretch
+    steps:
+      - checkout
+ 
+      - run:
+          name: Install CxCLI Plugin
+          command: |
+            wget -O ~/cxflow.jar https://github.com/checkmarx-ltd/cx-flow/releases/download/1.6.15/cx-flow-1.6.15.jar
+            echo $CIRCLE_PROJECT_REPONAME
+ 
+      - run:
+          name: Execute CxSAST Scan
+          command: |
+            mv ~/project/.checkmarx/application.yml ~/project
+            cd ~/project
+            java -jar ~/cxflow.jar --spring.config.location=application.yml \
+              --scan --f="/home/circleci/project" \
+              --cx-team="$CX_TEAM" \
+              --cx-project="$CIRCLE_PROJECT_REPONAME" \
+              --app="$CIRCLE_PROJECT_REPONAME" \
+              --checkmarx.base-url=$CX_LOCAL_SERVER \
+              --checkmarx.username=$CX_USER \
+              --checkmarx.password=$CX_PASSWORD
