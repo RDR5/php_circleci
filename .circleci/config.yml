@@ -24,7 +24,8 @@ jobs:
           command: |
             mv ~/project/.checkmarx/application.yml ~/project
             cd ~/project
-            java -jar ~/cxflow.jar --spring.config.location=./application.yml \
+            ls ~/project
+            java -jar ~/cxflow.jar --spring.config.location=./.checkmarx/application.yml \
               --scan --f="/home/circleci/project" \
               --cx-team="$CX_TEAM" \
               --cx-project="$CIRCLE_PROJECT_REPONAME" \
