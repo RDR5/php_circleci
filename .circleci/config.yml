@@ -29,6 +29,6 @@ jobs:
               --cx-team="$CX_TEAM" \
               --cx-project="$CIRCLE_PROJECT_REPONAME" \
               --app="$CIRCLE_PROJECT_REPONAME" \
-              --checkmarx.base-url=$CX_LOCAL_SERVER \
+              --checkmarx.base-url=$CX_SERVER \
               --checkmarx.username=$CX_USER \
               --checkmarx.password=$CX_PASSWORD
