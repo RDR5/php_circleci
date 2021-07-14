@@ -1,5 +1,5 @@
 cxflow:
-  bug-tracker: NONE
+  bug-tracker: JSON
   bug-tracker-impl:
      - Azure
      - Csv
