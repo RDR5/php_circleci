@@ -32,4 +32,4 @@ jobs:
               --checkmarx.base-url=$CX_SERVER \
               --checkmarx.username=$CX_USER \
               --checkmarx.password=$CX_PASSWORD \
-              --cx-flow.bugTracker="Json"
+              --cx-flow.bugTracker="JSON"
