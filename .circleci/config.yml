@@ -31,5 +31,4 @@ jobs:
               --app="$CIRCLE_PROJECT_REPONAME" \
               --checkmarx.base-url=$CX_SERVER \
               --checkmarx.username=$CX_USER \
-              --checkmarx.password=$CX_PASSWORD \
-              --cx-flow.bugTracker="Json"
+              --checkmarx.password=$CX_PASSWORD
