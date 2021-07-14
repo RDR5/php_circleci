@@ -30,7 +30,8 @@ checkmarx:
   #base-url: 
   multi-tenant: true
   scan-preset: Checkmarx Default
-  configuration: Default Configuration
+  #configuration: Default Configuration
+  configuration: Multi-language Scan
   team: /CxServer/CircleCI
   url: ${checkmarx.base-url}/cxrestapi
   preserve-xml: true
