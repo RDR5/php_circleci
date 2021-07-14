@@ -24,11 +24,12 @@ jobs:
           command: |
             mv ~/project/.checkmarx/application.yml ~/project
             cd ~/project
-            java -jar ~/cxflow.jar --spring.config.location=application.yml \
+            java -jar ~/cxflow.jar --spring.config.location=./application.yml \
               --scan --f="/home/circleci/project" \
               --cx-team="$CX_TEAM" \
               --cx-project="$CIRCLE_PROJECT_REPONAME" \
               --app="$CIRCLE_PROJECT_REPONAME" \
+              --bugTracker="Json" \
               --checkmarx.base-url=$CX_SERVER \
               --checkmarx.username=$CX_USER \
               --checkmarx.password=$CX_PASSWORD
