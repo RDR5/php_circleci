@@ -1,0 +1,43 @@
+cxflow:
+  bug-tracker: NONE
+  bug-tracker-impl:
+#    - Json
+  filter-severity:
+  filter-category:
+    - SQL_Injection
+    - Stored_XSS
+    - Reflected_XSS_All_Clients
+  filter-cwe:
+  filter-status:
+    # - Proposed Not Exploitable
+  enabled-vulnerability-scanners:
+    - sast
+#    - sca
+  break-build: true
+ 
+checkmarx:
+  version: 9.0
+  #username: 
+  #password: 
+  client-secret: 014DF517-39D1-4453-B7B3-9930C563627C
+  scope: access_control_api sast_rest_api
+  #base-url: 
+  multi-tenant: true
+  scan-preset: Checkmarx Default
+  configuration: Default Configuration
+  team: /CxServer/CircleCI
+  url: ${checkmarx.base-url}/cxrestapi
+  preserve-xml: true
+  #WSDL Config
+  portal-url: ${checkmarx.base-url}/cxwebinterface/Portal/CxWebService.asmx
+  sdk-url: ${checkmarx.base-url}/cxwebinterface/SDK/CxSDKWebService.asmx
+  portal-wsdl: ${checkmarx.base-url}/Portal/CxWebService.asmx?wsdl
+  sdk-wsdl: ${checkmarx.base-url}/SDK/CxSDKWebService.asmx?wsdl
+  
+#sca:
+#  appUrl: https://sca.scacheckmarx.com
+#  apiUrl: https://api.scacheckmarx.com
+#  accessControlUrl: https://platform.checkmarx.net
+#  #tenant: 
+#  #username: 
+#  #password: 
